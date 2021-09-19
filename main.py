@@ -1,9 +1,9 @@
 import pymysql
-from main import mycursor, mydb, broker, topic
+from main import mycursor, mydb, broker, topic, name
 import paho.mqtt.client as mqtt
 
-
-client = mqtt.Client("P1")
+# создаем новый экземпляр
+client = mqtt.Client(name)
 client.connect(broker)
 
 while True:
@@ -17,7 +17,6 @@ while True:
         client.subscribe(topic)
 
     # получаем сообщения и сразу добаляем в список
-
     def on_message(client, userdata, msg):
         material.append(message)
 
