@@ -1,5 +1,5 @@
 import pymysql
-from main import mycursor, mydb, broker, topic, name
+from config import mycursor, mydb, broker, topic, name
 import paho.mqtt.client as mqtt
 
 # создаем новый экземпляр
